@@ -37,4 +37,45 @@ class ChocoLab extends Dog {
 
 The keyword is `extends` for making something a subclass of another.
 
-## Constructor, Inheritance, and super()
+## Method Overriding and `super.method`
+
+If a subclass defines a method with the same _method signature_ of its parent class, it _overrides_ that method.
+
+Note, the _method signature_ is sensitive to the # of arguments passed in... To override the superclass method, the signature must match exactly.
+
+**Overridden methods can call the superclass method**
+
+Take the following example:
+
+```java
+class Person {
+  void speak(String message) {
+    System.out.println(message);
+  }
+  void speak(String message, boolean shout) {
+    System.out.println(message.toUpperCase());
+  }
+}
+
+class Smoker extends Person {
+  void speak(String message) {
+    System.out.println("*cough*... " + message);
+  }
+}
+
+class RunIt {
+  public static void main(String[] args){
+    Smoker smoker = new Smoker();
+
+    smoker.speak("hello");        // prints *cough*... hello (from the subclass)
+    smoker.speak("hello", true);  // prints HELLO (from the superclass)
+  }
+}
+```
+
+## Constructor, Inheritance, and `super()`
+Every class in Java has a constructor.  By default it's a no-op (that is, it does nothing) method that takes no parameters.
+
+**Constructors are called from the top down**: When you instantiate an object, all matching constructors are called in order:
+
+**Constructors are not inherited, but can call parent constructors with `super()`**: If you define a constructor in a base class that takes parameters, subclasses won't be able to use it

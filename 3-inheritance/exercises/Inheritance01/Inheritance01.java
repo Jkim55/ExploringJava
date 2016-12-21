@@ -7,6 +7,6 @@ public class Inheritance01 {
     Person person = new Person();
     person.printName("Ed", "Eades");
     person.printName("Ji", "Young", "Kim");
-    person.printName("Ji", "Kim", 3);
+    person.printName("Ji", "Kim", 33);
   }
 }
