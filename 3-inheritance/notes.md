@@ -66,7 +66,6 @@ class Smoker extends Person {
 class RunIt {
   public static void main(String[] args){
     Smoker smoker = new Smoker();
-
     smoker.speak("hello");        // prints *cough*... hello (from the subclass)
     smoker.speak("hello", true);  // prints HELLO (from the superclass)
   }
