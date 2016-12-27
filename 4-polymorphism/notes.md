@@ -65,3 +65,9 @@ Inheritance is one way to _achieve_ polymorphism, if and only if
 - only behaviors are overridden in the sub classes (not method signatures)
 
 There are other ways to achieve polymorphism, such as Interfaces.
+
+## When to use polymorphism
+
+Any time you see `instanceof` in your code, you should consider whether you can replace it with polymorphism.
+
+Polymorphism forms the basis of non-declarative Dependency Injection.
